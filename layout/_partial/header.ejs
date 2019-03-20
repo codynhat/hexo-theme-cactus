@@ -13,12 +13,28 @@
   </a>
   <div id="nav">
     <ul>
-      <li class="icon">
-        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
-      </li>
       <% for (var i in theme.nav) { %>
         <li><a href="<%- url_for(theme.nav[i]) %>"><%= __('nav.'+i).replace("nav.", "") %></a></li>
       <% } %>
     </ul>
   </div>
+  <% if (theme.social_links) { %>
+    <p>
+      <% var nb_links = Object.keys(theme.social_links).length %>
+      <% var i = 0 %>
+      <% for(var link in theme.social_links) { %>
+        <% if (link == 'rss') { %>
+          <a class="icon" target="_blank" href="<%- url_for(theme.social_links[link]) %>">
+            <i class="fas fa-<%= link %> fa-lg"></i><!--
+      ---></a><!--
+      ---><% } else { %>
+          <a class="icon" target="_blank" href="<%- url_for(theme.social_links[link]) %>">
+            <i class="fab fa-<%= link %> fa-lg"></i><!--
+      ---></a><!--
+    ---><% } %><!--
+    ---><%= ' ' %>
+        <% i+=1 %>
+      <% } %>
+    </p>
+  <% } %>
 </header>
