@@ -43,11 +43,19 @@
     <% if (theme.direction) { %>
       <%- css('css/rtl') %>
     <% } %>
+
     <!-- rss -->
     <% if (theme.rss === '' && config.feed && config.feed.path) { %>
       <% theme.rss = config.feed.path %>
     <% } %>
     <% if (theme.rss) { %>
       <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml" />
+    <% } %>
+
+    <!-- canonical link -->
+    <% if (is_post()) { %>
+      <% if (page.canonical_url) { %>
+        <link rel="canonical" href="<%- page.canonical_url %>" />
+      <% } %>
     <% } %>
 </head>
