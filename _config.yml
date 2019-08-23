@@ -139,3 +139,8 @@ baidu_analytics:
 # logo and/or favicons of you website.
 gravatar:
   email: name@email.com
+
+# Fill in Fathom analytics tracking ID to enable Fathom Analytics
+fathom_analytics:
+  enabled: false
+  id: <>
