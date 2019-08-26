@@ -63,7 +63,7 @@
       o.async=1; o.src=t; o.id='fathom-script';
       m.parentNode.insertBefore(o,m)
       })(document, window, '//cdn.usefathom.com/tracker.js', 'fathom');
-      fathom('set', 'siteId', '<%= theme.google_analytics.id %>');
+      fathom('set', 'siteId', '<%= theme.fathom_analytics.id %>');
       fathom('trackPageview');
     </script>
 <!-- / Fathom -->
